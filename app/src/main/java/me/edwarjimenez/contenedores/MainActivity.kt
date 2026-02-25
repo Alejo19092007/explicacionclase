@@ -120,3 +120,73 @@ fun ContentTarea() {
         )
     }
 }
+@Preview(showSystemUi = true)
+@Composable
+fun QuadrantScreen() {
+    Column(
+        modifier = Modifier.fillMaxSize()
+    ) {
+
+        Row(modifier = Modifier.weight(1f)) {
+
+            QuadrantItem(
+                title = "Text composable",
+                description = "Displays text and follows the recommended Material Design guidelines.",
+                backgroundColor = Color(0xFFEADDFF),
+                modifier = Modifier.weight(1f)
+            )
+
+            QuadrantItem(
+                title = "Image composable",
+                description = "Creates a composable that lays out and draws a given Painter class object.",
+                backgroundColor = Color(0xFFD0BCFF),
+                modifier = Modifier.weight(1f)
+            )
+        }
+
+        Row(modifier = Modifier.weight(1f)) {
+
+            QuadrantItem(
+                title = "Row composable",
+                description = "A layout composable that places its children in a horizontal sequence.",
+                backgroundColor = Color(0xFFB69DF8),
+                modifier = Modifier.weight(1f)
+            )
+
+            QuadrantItem(
+                title = "Column composable",
+                description = "A layout composable that places its children in a vertical sequence.",
+                backgroundColor = Color(0xFFF6EDFF),
+                modifier = Modifier.weight(1f)
+            )
+        }
+    }
+}
+
+@Composable
+fun QuadrantItem(
+    title: String,
+    description: String,
+    backgroundColor: Color,
+    modifier: Modifier = Modifier
+) {
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .background(backgroundColor)
+            .padding(16.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+
+        Text(
+            text = title,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(bottom = 16.dp)
+        )
+
+        Text(
+            text = description
+        )
+    }
+}
